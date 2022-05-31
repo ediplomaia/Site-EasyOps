@@ -1,0 +1,60 @@
+name: Trigger auto deployment for prdeasyops
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ master ]
+    paths:
+    - '**'
+    - '.github/workflows/prdeasyops-AutoDeployTrigger-18a48107-40e7-40b8-a4ed-4ada15b3d0f9.yml'
+
+  # Allow mannually trigger 
+  workflow_dispatch:      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to container registry
+        uses: docker/login-action@v1
+        with:
+          registry: prdimagens.azurecr.io
+          username: ${{ secrets.PRDEASYOPS_REGISTRY_USERNAME }}
+          password: ${{ secrets.PRDEASYOPS_REGISTRY_PASSWORD }}
+
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: prdimagens.azurecr.io/prdeasyops:${{ github.sha }}
+          file: ./Dockerfile
+          context: ./
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.PRDEASYOPS_AZURE_CREDENTIALS }}
+
+
+      - name: Deploy to containerapp
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az config set extension.use_dynamic_install=yes_without_prompt
+            az containerapp registry set -n prdeasyops -g RG-PRD-OPS --server prdimagens.azurecr.io --username  ${{ secrets.PRDEASYOPS_REGISTRY_USERNAME }} --password ${{ secrets.PRDEASYOPS_REGISTRY_PASSWORD }}
+            az containerapp update -n prdeasyops -g RG-PRD-OPS --image prdimagens.azurecr.io/prdeasyops:${{ github.sha }}

@@ -123,7 +123,10 @@ textarea {
 
 
 form button{
-    padding:15px 424px;
+     height: 8%;
+    width: 100%;
+    /*padding:15px 60px;
+    align-items: center; */
     font-family: poppins;
     font-size:20px;
     color: whitesmoke;
@@ -164,4 +167,35 @@ form button{
     font-size: 18px;
     font-weight: 400;
     opacity: 1;
+}
+
+.cursor{
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    pointer-events: none;
+    position: fixed;
+    top: -25px;
+    left: -25px;
+    z-index: 10;
+    opacity: .6;
+    transition:  scale .5s ease;
+}
+.cursor-small{
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    pointer-events: none;
+    position: fixed;
+    top: -25px;
+    left: -25px;
+    z-index: 10;
+    opacity: .6;
+    transition:  scale .4s ease;
 }

@@ -123,7 +123,10 @@ textarea {
 
 
 form button{
-    padding:15px 424px;
+     height: 8%;
+    width: 100%;
+    /*padding:15px 60px;
+    align-items: center; */
     font-family: poppins;
     font-size:20px;
     color: whitesmoke;

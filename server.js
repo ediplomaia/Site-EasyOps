@@ -22,7 +22,7 @@ app.post('/', (req, res)=>{
         secure:false,
         auth: {
             user: 'contato@easyops.com.br',
-            pass: 'tm4A<O<A'
+            pass: 'Lo295m&XPHUd#RUX'
         }
     })
 

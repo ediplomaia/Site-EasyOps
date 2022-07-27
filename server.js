@@ -21,15 +21,15 @@ app.post('/', (req, res)=>{
         port: 587,
         secure:false,
         auth: {
-            user: 'contato@easyops.com.br',
-            pass: 'Lo295m&XPHUd#RUX'
+            user: 'contato@eazyops.com.br',
+            pass: 'tm4A<O<A'
         }
     })
 
     const mailOptions = {
-        from: 'contato@easyops.com.br',
+        from: 'contato@eazyops.com.br',
         //from: req.body.email,
-        to: 'contato@easyops.com.br',
+        to: 'contato@eazyops.com.br',
         subject: 'De: '+ req.body.email +' | Assunto: '+ req.body.subject,
         text: req.body.mensagem
     }

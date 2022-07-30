@@ -1,0 +1,388 @@
+/*!
+  * Item: Willy Wonka Theme
+  * Description: Personal Portfolio Website Template
+  * Author/Developer: Sujal
+  * Version: v1
+  */
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    background-color: #101010;
+}
+
+
+
+body{
+    user-select: none;
+    height: auto;
+    overflow-x: hidden;
+    width: 100%;
+    background: #171717;
+}
+.form-container {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    height: 100vh;
+    background-color: #171717;
+}
+
+.contact-form {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 600px;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 2rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.submit {
+    border: 1px solid black;
+    padding: 1rem;
+    text-align: center;
+    background-color: #c70039;
+    cursor: pointer;
+}
+
+.submit:hover {
+    opacity: 0.6;
+}
+
+.input-name{
+    width: 100%;
+    padding:10px 20px;
+    margin:14px;
+    border-radius: 8px;
+    outline: none;
+    background: #050505;
+    border:none;
+    color: whitesmoke;
+    font-family: poppins;
+    font-size: 18px;
+}
+
+.input-textarea{
+    width: 100%;
+    padding:10px 20px;
+    margin:15px;
+    height: 150px;
+    border-radius: 8px;
+    outline: none;
+    background: #050505;
+    border:none;
+    color: whitesmoke;
+    font-family: poppins;
+    font-size: 18px;
+}
+
+.contact-header{
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: raleway;
+    color: whitesmoke;
+    padding:10px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+    font-weight: 900;
+}
+
+.color{
+    color: #c70039;
+    transition: all .4s ease;
+}
+
+.contact-header-caption{
+    padding: 10px;
+    color: whitesmoke;
+    opacity: .9;
+    font-family:raleway;
+    font-size: 18px;
+}
+
+
+
+form button{
+     height: 8%;
+    width: 100%;
+    /*padding:15px 60px;
+    align-items: center; */
+    font-family: poppins;
+    font-size:20px;
+    color: whitesmoke;
+    background:#BB0035;
+    opacity: .8;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all .4s ease;
+}
+
+
+#navigation-bar img{
+    height: 80px;
+    position: absolute;
+    ;
+    top: 2%;
+    left: 1%;
+    opacity: .8;
+    transition: all .4s ease;
+}
+
+.footer{
+    background: #080808;
+    width: 100%;
+    padding: 20px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    font-family: poppins;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-text{
+    position: relative;
+    display: inline;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.cursor{
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    pointer-events: none;
+    position: fixed;
+    top: -25px;
+    left: -25px;
+    z-index: 10;
+    opacity: .6;
+    transition:  scale .5s ease;
+}
+.cursor-small{
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    pointer-events: none;
+    position: fixed;
+    top: -25px;
+    left: -25px;
+    z-index: 10;
+    opacity: .6;
+    transition:  scale .4s ease;
+}
+
+
+
+#navigation-content{
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    z-index: 5;
+    background-color:#020202;
+    transform: translateY(-200%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#navigation-bar{
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    z-index: 3;
+    padding: 10px;
+    background:transparent;
+    overflow: hidden;
+}
+.menubar{
+    position: absolute;
+    right:4%;
+    top: 40%;
+    cursor: pointer;
+    opacity: .8;
+    transition: all .4s ease;
+}
+.menubar span{
+    position: relative;
+    background-color:transparent;
+    height:2px;
+    width: 20px;
+    display: block;
+    margin:6px;
+    border-radius: 20px;
+}
+.menubar .first-span{
+    width:35px;
+}
+.menubar .first-span::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top:0;
+    right:0;
+    background-color:whitesmoke;
+    transition: all .5s ease;
+
+}
+.menubar .second-span{
+    width:35px;
+}
+.menubar .second-span::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 75%;
+    top:0;
+    right:0;
+    background-color:whitesmoke;
+    transition: all .3s ease;
+}
+.menubar .third-span{
+    width:35px;
+}
+.menubar .third-span::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    right:0;
+    background-color:whitesmoke;
+    transition: all .3s ease;
+}
+.menubar:hover .second-span::before , .menubar:hover .first-span::before {
+    width: 100%;
+}
+.menubar:hover{
+    opacity: 1;
+}
+.close-first , .close-second{
+ height: 2px;
+ width: 35px;
+ background-color: whitesmoke;
+ display: block;
+ margin: 4px;
+ cursor: pointer;
+ padding: 1px;
+ border-radius: 20px;
+}
+.close-first {
+    transform: rotate(45deg);
+}
+.close-second{
+    transform: rotate(-45deg);
+}
+.navigation-close{
+    position: absolute;
+    top: 6%;
+    right:4%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all.3s ease;
+    opacity: .8;
+}
+.navigation-close:hover{
+    opacity: 1;
+    transform: rotate(90deg);
+}
+.logo img{
+    height: 80px;
+    position: absolute;
+    top: 3%;
+    left: 2.5%;
+    opacity: .8;
+    z-index: 2;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.logo img:hover{
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+#navigation-bar img{
+    height: 80px;
+    position: absolute;
+    ;
+    top: 15%;
+    left: 2.5%;
+    opacity: .8;
+    transition: all .4s ease;
+}
+#navigation-bar img:hover{
+    opacity: 1;
+    transform:rotate(-45deg);
+}
+
+
+.navigation-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family:poppins;
+}
+.navigation-links a{
+    padding:10px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    opacity: .7;
+    transition: all .4s ease;
+}
+.navigation-links a:hover{
+    opacity: 1;
+}
+.navigation-links a::before{
+    content: "";
+    position: absolute;
+    top:50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    font-size: 5em;
+    font-weight: 400;
+    font-family: monoton;
+    color:rgb(255, 255, 255,.1);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    letter-spacing: 100px;
+    transition: all .4s ease;
+}
+.navigation-links a:hover::before{
+    content: attr(data-text);
+    opacity: 1;
+    letter-spacing: 10px;
+}
